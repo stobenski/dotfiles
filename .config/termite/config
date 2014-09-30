@@ -1,0 +1,68 @@
+
+[options]
+resize_grip         = false
+scroll_on_output    = false
+scroll_on_keystroke = true
+audible_bell        = false
+visible_bell        = false
+mouse_autohide      = true
+allow_bold          = false
+dynamic_title       = true
+urgent_on_bell      = false
+clickable_url       = true
+font                = PragmataProPowerline 9
+scrollback_lines    = 10000
+search_wrap         = false
+icon_name           = termite
+geometry            = 1480x800+100+100
+# modify_other_keys = false
+
+## "system", "on" or "off"
+cursor_blink = off
+
+## "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+browser = firefox
+
+## word characters used for word selection
+## (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+
+[colors]
+
+# grubvbox:
+
+foreground      = #ebdbb2
+foreground_bold = #ebdbb2
+background      = #282828
+color0          = #282828
+color1          = #cc241d
+color2          = #98971a
+color3          = #d79921
+color4          = #458588
+color5          = #b16286
+color6          = #689d6a
+color7          = #bdae93
+color8          = #7c6f64
+color9          = #fb4934
+color10         = #b8bb26
+color11         = #fabd2f
+color12         = #83a598
+color13         = #d3869b
+color14         = #8ec07c
+color15         = #ebdbb2
+# foreground_dim  = #666666
+# cursor          = #dcdccc
+
+[hints]
+# font = Monospace 12
+# foreground = #dcdccc
+# background = #3f3f3f
+# padding = 2
+# border = #3f3f3f
+# border_width = 0.5
+# roundness = 2.0
+
+# vim: ft=dosini cms=#%s

@@ -1,0 +1,594 @@
+Xft.autohint:            0
+Xft.lcdfilter:           lcddefault
+Xft.dpi:                 96.0
+Xft.hinting:             1
+Xft.hintstyle:           hintmedium
+Xft.antialias:           1
+Xft.rgba:                rgb
+Xcursor.theme:           Neutral_Plus
+
+X48.*smallLabelFont:     -adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1
+X48.*mediumLabelFont:    -adobe-helvetica-bold-r-normal--14-140-75-75-p-82-iso8859-1
+X48.*largeLabelFont:     -adobe-helvetica-bold-r-normal--17-120-100-100-p-92-iso8859-1
+*international:          true
+
+URxvt*font:              xft:Tewi:regular:size=9
+URxvt*imFont:            xft:Tewi:regular:size=9
+URxvt*boldFont:          xft:Tewi:regular:size=9
+URxvt*italicFont:        xft:Tewi:regular:size=9
+URxvt*boldItalicFont:    xft:Tewi:regular:size=9
+
+!- Perl extensions
+URxvt.perl-ext-common:   default,clipboard,matcher
+! URxvt.perl-ext-common:   default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u:        perl:url-select:select_next
+URxvt.url-launcher:      /usr/bin/firefox
+URxvt.underlineURLs:     True
+URxvt.matcher.button:    1 
+! URxvt.keysym.M-Escape:   perl:keyboard-select:activate
+!- clipboard script: http://nixmeal.wordpress.com/2012/07/24/copypaste-text-in-urxvt-rxvt-unicode-using-keyboard/
+URxvt.keysym.S-Insert:   perl:clipboard:paste
+URxvt.iso14755:          False
+
+URxvt*termName:          xterm-256color
+! URxvt*termName:          rxvt-unicode-256color
+URxvt*geometry:          145x45
+URxvt*saveLines:         45000
+URxvt.depth:             32
+URxvt.iconFile:          /usr/share/pixmaps/urxvt.png
+URxvt*scrollBar:         false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyKeypress: true
+! URxvt*borderLess: true
+! URxvt*externalBorder:0
+URxvt*internalBorder:0
+
+!- emulate XTerm for proper recognition of key combinations in Vim
+! URxvt.keysym.Up              : \033[A  !breaks arrow keys in Vim
+! URxvt.keysym.Down            : \033[B  !breaks arrow keys in Vim
+! URxvt.keysym.Right           : \033[C  !breaks arrow keys in Vim
+! URxvt.keysym.Left            : \033[D  !breaks arrow keys in Vim
+! URxvt.keysym.Page_Up         : \033[5~ !breaks scrolling in Rxvt
+! URxvt.keysym.Page_Down       : \033[6~ !breaks scrolling in Rxvt
+! URxvt.keysym.Home            : \033[H  !breaks navigation in Vim
+! URxvt.keysym.End             : \033[F  !breaks navigation in Vim
+URxvt.keysym.S-Up             : \033[1;2A
+URxvt.keysym.S-Down           : \033[1;2B
+URxvt.keysym.S-Right          : \033[1;2C
+URxvt.keysym.S-Left           : \033[1;2D
+! URxvt.keysym.S-Page_Up       : captured by terminal for scrolling
+! URxvt.keysym.S-Page_Down     : captured by terminal for scrolling
+URxvt.keysym.S-Home           : \033[1;2H
+URxvt.keysym.S-End            : \033[1;2F
+URxvt.keysym.M-Up             : \033[1;3A
+URxvt.keysym.M-Down           : \033[1;3B
+URxvt.keysym.M-Right          : \033[1;3C
+URxvt.keysym.M-Left           : \033[1;3D
+URxvt.keysym.M-Page_Up        : \033[5;3~
+URxvt.keysym.M-Page_Down      : \033[6;3~
+URxvt.keysym.M-Home           : \033[1;3H
+URxvt.keysym.M-End            : \033[1;3F
+URxvt.keysym.M-S-Up           : \033[1;4A
+URxvt.keysym.M-S-Down         : \033[1;4B
+URxvt.keysym.M-S-Right        : \033[1;4C
+URxvt.keysym.M-S-Left         : \033[1;4D
+!URxvt.keysym.M-S-Page_Up     : seen as Rxvt.keysym.S-Page_Up
+!URxvt.keysym.M-S-Page_Down   : seen as Rxvt.keysym.S-Page_Down
+URxvt.keysym.M-S-Home         : \033[1;4H
+URxvt.keysym.M-S-End          : \033[1;4F
+URxvt.keysym.C-Up             : \033[1;5A
+URxvt.keysym.C-Down           : \033[1;5B
+URxvt.keysym.C-Right          : \033[1;5C
+URxvt.keysym.C-Left           : \033[1;5D
+URxvt.keysym.C-Page_Up        : \033[5;5~
+URxvt.keysym.C-Page_Down      : \033[6;5~
+URxvt.keysym.C-Home           : \033[1;5H
+URxvt.keysym.C-End            : \033[1;5F
+URxvt.keysym.C-S-Up           : \033[1;6A
+URxvt.keysym.C-S-Down         : \033[1;6B
+URxvt.keysym.C-S-Right        : \033[1;6C
+URxvt.keysym.C-S-Left         : \033[1;6D
+!URxvt.keysym.C-S-Page_Up     : seen as Rxvt.keysym.S-Page_Up
+!URxvt.keysym.C-S-Page_Down   : seen as Rxvt.keysym.S-Page_Down
+URxvt.keysym.C-S-Home         : \033[1;6H
+URxvt.keysym.C-S-End          : \033[1;6F
+URxvt.keysym.M-C-Up           : \033[1;7A
+URxvt.keysym.M-C-Down         : \033[1;7B
+URxvt.keysym.M-C-Right        : \033[1;7C
+URxvt.keysym.M-C-Left         : \033[1;7D
+URxvt.keysym.M-C-Page_Up      : \033[5;7~
+URxvt.keysym.M-C-Page_Down    : \033[6;7~
+URxvt.keysym.M-C-Home         : \033[1;7H
+URxvt.keysym.M-C-End          : \033[1;7F
+URxvt.keysym.M-C-S-Up         : \033[1;8A
+URxvt.keysym.M-C-S-Down       : \033[1;8B
+URxvt.keysym.M-C-S-Right      : \033[1;8C
+URxvt.keysym.M-C-S-Left       : \033[1;8D
+!URxvt.keysym.M-C-S-Page_Up   : seen as Rxvt.keysym.S-Page_Up
+!URxvt.keysym.M-C-S-Page_Down : seen as Rxvt.keysym.S-Page_Down
+URxvt.keysym.M-C-S-Home       : \033[1;8H
+URxvt.keysym.M-C-S-End        : \033[1;8F
+
+! Normal
+*URxvt*keysym.Home:		\033OH
+*URxvt*keysym.End:		\033OF
+*URxvt*keysym.F1:		\033OP
+*URxvt*keysym.F2:		\033OQ
+*URxvt*keysym.F3:		\033OR
+*URxvt*keysym.F4:		\033OS
+
+!- Shift
+!- paste conflict
+! *URxvt*keysym.S-Insert:	\033[2;2~
+*URxvt*keysym.S-Delete:		\033[3;2~
+*URxvt*keysym.S-Home:		\033[1;2H
+*URxvt*keysym.S-End:		\033[1;2F
+!- scrolling conflict
+! *URxvt*keysym.S-Page_Up:	\033[5;2~
+! *URxvt*keysym.S-Page_Down:	\033[6;2~
+
+*URxvt*keysym.S-F1:		\033[1;2P
+*URxvt*keysym.S-F2:		\033[1;2Q
+*URxvt*keysym.S-F3:		\033[1;2R
+*URxvt*keysym.S-F4:		\033[1;2S
+*URxvt*keysym.S-F5:		\033[15;2~
+*URxvt*keysym.S-F6:		\033[17;2~
+*URxvt*keysym.S-F7:		\033[18;2~
+*URxvt*keysym.S-F8:		\033[19;2~
+*URxvt*keysym.S-F9:		\033[20;2~
+*URxvt*keysym.S-F10:		\033[21;2~
+*URxvt*keysym.S-F11:		\033[23;2~
+*URxvt*keysym.S-F12:		\033[24;2~
+
+! Alt
+*URxvt*keysym.M-Insert:		\033[2;3~
+*URxvt*keysym.M-Delete:		\033[3;3~
+*URxvt*keysym.M-Home:		\033[1;3H
+*URxvt*keysym.M-End:		\033[1;3F
+*URxvt*keysym.M-Page_Up:	\033[5;3~
+*URxvt*keysym.M-Page_Down:	\033[6;3~
+
+*URxvt*keysym.M-F1:		\033[1;3P
+*URxvt*keysym.M-F2:		\033[1;3Q
+*URxvt*keysym.M-F3:		\033[1;3R
+*URxvt*keysym.M-F4:		\033[1;3S
+*URxvt*keysym.M-F5:		\033[15;3~
+*URxvt*keysym.M-F6:		\033[17;3~
+*URxvt*keysym.M-F7:		\033[18;3~
+*URxvt*keysym.M-F8:		\033[19;3~
+*URxvt*keysym.M-F9:		\033[20;3~
+*URxvt*keysym.M-F10:		\033[21;3~
+*URxvt*keysym.M-F11:		\033[23;3~
+*URxvt*keysym.M-F12:		\033[24;3~
+
+*URxvt*keysym.M-Up:		\033[1;3A
+*URxvt*keysym.M-Down:		\033[1;3B
+*URxvt*keysym.M-Right:		\033[1;3C
+*URxvt*keysym.M-Left:		\033[1;3D
+
+! Shift+Alt
+*URxvt*keysym.S-M-F1:		\033[1;4P
+*URxvt*keysym.S-M-F2:		\033[1;4Q
+*URxvt*keysym.S-M-F3:		\033[1;4R
+*URxvt*keysym.S-M-F4:		\033[1;4S
+*URxvt*keysym.S-M-F5:		\033[15;4~
+*URxvt*keysym.S-M-F6:		\033[17;4~
+*URxvt*keysym.S-M-F7:		\033[18;4~
+*URxvt*keysym.S-M-F8:		\033[19;4~
+*URxvt*keysym.S-M-F9:		\033[20;4~
+*URxvt*keysym.S-M-F10:		\033[21;4~
+*URxvt*keysym.S-M-F11:		\033[23;4~
+*URxvt*keysym.S-M-F12:		\033[24;4~
+
+*URxvt*keysym.S-M-Insert:	\033[2;4~
+*URxvt*keysym.S-M-Delete:	\033[3;4~
+*URxvt*keysym.S-M-Home:		\033[1;4H
+*URxvt*keysym.S-M-End:		\033[1;4F
+*URxvt*keysym.S-M-Page_Up:	\033[5;4~
+*URxvt*keysym.S-M-Page_Down:	\033[6;4~
+
+*URxvt*keysym.S-M-Up:		\033[1;4A
+*URxvt*keysym.S-M-Down:		\033[1;4B
+*URxvt*keysym.S-M-Right:	\033[1;4C
+*URxvt*keysym.S-M-Left:		\033[1;4D
+
+! Control
+*URxvt*keysym.C-F1:		\033[1;5P
+*URxvt*keysym.C-F2:		\033[1;5Q
+*URxvt*keysym.C-F3:		\033[1;5R
+*URxvt*keysym.C-F4:		\033[1;5S
+*URxvt*keysym.C-F5:		\033[15;5~
+*URxvt*keysym.C-F6:		\033[17;5~
+*URxvt*keysym.C-F7:		\033[18;5~
+*URxvt*keysym.C-F8:		\033[19;5~
+*URxvt*keysym.C-F9:		\033[20;5~
+*URxvt*keysym.C-F10:		\033[21;5~
+*URxvt*keysym.C-F11:		\033[23;5~
+*URxvt*keysym.C-F12:		\033[24;5~
+
+!*URxvt*keysym.C-Insert:		\033[2;5~
+*URxvt*keysym.C-Delete:		\033[3;5~
+*URxvt*keysym.C-Home:		\033[1;5H
+*URxvt*keysym.C-End:		\033[1;5F
+*URxvt*keysym.C-Page_Up:	\033[5;5~
+*URxvt*keysym.C-Page_Down:	\033[6;5~
+
+*URxvt*keysym.C-Up:		\033[1;5A
+*URxvt*keysym.C-Down:		\033[1;5B
+*URxvt*keysym.C-Right:		\033[1;5C
+*URxvt*keysym.C-Left:		\033[1;5D
+
+! Shift+Control
+*URxvt*keysym.S-C-F1:		\033[1;6P
+*URxvt*keysym.S-C-F2:		\033[1;6Q
+*URxvt*keysym.S-C-F3:		\033[1;6R
+*URxvt*keysym.S-C-F4:		\033[1;6S
+*URxvt*keysym.S-C-F5:		\033[15;6~
+*URxvt*keysym.S-C-F6:		\033[17;6~
+*URxvt*keysym.S-C-F7:		\033[18;6~
+*URxvt*keysym.S-C-F8:		\033[19;6~
+*URxvt*keysym.S-C-F9:		\033[20;6~
+*URxvt*keysym.S-C-F10:		\033[21;6~
+*URxvt*keysym.S-C-F11:		\033[23;6~
+*URxvt*keysym.S-C-F12:		\033[24;6~
+
+*URxvt*keysym.S-C-Insert:	\033[2;6~
+*URxvt*keysym.S-C-Delete:	\033[3;6~
+*URxvt*keysym.S-C-Home:		\033[1;6H
+*URxvt*keysym.S-C-End:		\033[1;6F
+*URxvt*keysym.S-C-Page_Up:	\033[5;6~
+*URxvt*keysym.S-C-Page_Down:	\033[6;6~
+
+*URxvt*keysym.S-C-Up:		\033[1;6A
+*URxvt*keysym.S-C-Down:		\033[1;6B
+*URxvt*keysym.S-C-Right:	\033[1;6C
+*URxvt*keysym.S-C-Left:		\033[1;6D
+
+! Alt+Control
+*URxvt*keysym.M-C-F1:		\033[1;7P
+*URxvt*keysym.M-C-F2:		\033[1;7Q
+*URxvt*keysym.M-C-F3:		\033[1;7R
+*URxvt*keysym.M-C-F4:		\033[1;7S
+*URxvt*keysym.M-C-F5:		\033[15;7~
+*URxvt*keysym.M-C-F6:		\033[17;7~
+*URxvt*keysym.M-C-F7:		\033[18;7~
+*URxvt*keysym.M-C-F8:		\033[19;7~
+*URxvt*keysym.M-C-F9:		\033[20;7~
+*URxvt*keysym.M-C-F10:		\033[21;7~
+*URxvt*keysym.M-C-F11:		\033[23;7~
+*URxvt*keysym.M-C-F12:		\033[24;7~
+
+*URxvt*keysym.M-C-Insert:	\033[2;7~
+*URxvt*keysym.M-C-Delete:	\033[3;7~
+*URxvt*keysym.M-C-Home:		\033[1;7H
+*URxvt*keysym.M-C-End:		\033[1;7F
+*URxvt*keysym.M-C-Page_Up:	\033[5;7~
+*URxvt*keysym.M-C-Page_Down:	\033[6;7~
+
+*URxvt*keysym.M-C-Up:		\033[1;7A
+*URxvt*keysym.M-C-Down:		\033[1;7B
+*URxvt*keysym.M-C-Right:	\033[1;7C
+*URxvt*keysym.M-C-Left:		\033[1;7D
+
+! Shift+Alt+Control
+*URxvt*keysym.S-M-C-F1:		\033[1;8P
+*URxvt*keysym.S-M-C-F2:		\033[1;8Q
+*URxvt*keysym.S-M-C-F3:		\033[1;8R
+*URxvt*keysym.S-M-C-F4:		\033[1;8S
+*URxvt*keysym.S-M-C-F5:		\033[15;8~
+*URxvt*keysym.S-M-C-F6:		\033[17;8~
+*URxvt*keysym.S-M-C-F7:		\033[18;8~
+*URxvt*keysym.S-M-C-F8:		\033[19;8~
+*URxvt*keysym.S-M-C-F9:		\033[20;8~
+*URxvt*keysym.S-M-C-F10:	\033[21;8~
+*URxvt*keysym.S-M-C-F11:	\033[23;8~
+*URxvt*keysym.S-M-C-F12:	\033[24;8~
+
+*URxvt*keysym.S-M-C-Insert:	\033[2;8~
+*URxvt*keysym.S-M-C-Delete:	\033[3;8~
+*URxvt*keysym.S-M-C-Home:	\033[1;8H
+*URxvt*keysym.S-M-C-End:	\033[1;8F
+*URxvt*keysym.S-M-C-Page_Up:	\033[5;8~
+*URxvt*keysym.S-M-C-Page_Down:	\033[6;8~
+
+*URxvt*keysym.S-M-C-Up:		\033[1;8A
+*URxvt*keysym.S-M-C-Down:	\033[1;8B
+*URxvt*keysym.S-M-C-Right:	\033[1;8C
+*URxvt*keysym.S-M-C-Left:	\033[1;8D
+
+xcalc*ti.button1.vertDistance:          4
+xcalc*ti.button2.vertDistance:          4
+xcalc*ti.button3.vertDistance:          4
+xcalc*ti.button4.vertDistance:          4
+xcalc*ti.button5.vertDistance:          4
+xcalc*ti.background:                    gray90
+xcalc*ti.bevel.borderColor:             gray65
+xcalc*ti.bevel.borderWidth:             1
+xcalc*ti.bevel.vertDistance:            4
+xcalc*ti.bevel.defaultDistance:         0
+xcalc*ti.bevel.background:              rgb:b/c/b
+xcalc*ti.bevel.screen*background:       rgb:b/c/b
+xcalc*ti.bevel.screen.borderColor:      rgb:b/c/b
+xcalc*ti.bevel.screen.vertDistance:     10
+xcalc*ti.bevel.screen.horizDistance:    10
+xcalc*ti.bevel.screen*left:             chainLeft
+xcalc*ti.bevel.screen*right:            chainRight
+xcalc*ti.bevel.screen*top:              chainTop
+xcalc*ti.bevel.screen*bottom:           chainBottom
+xcalc*ti.bevel.screen*LCD.foreground:   gray10
+xcalc*ti.bevel.screen*INV.vertDistance: 0
+xcalc*ti.Command.borderColor:           gray65
+xcalc*ti.Command.background:            gray85
+xcalc*ti.Command.foreground:            gray30
+xcalc*ti.button5.background:            rgb:e/b/b
+xcalc*ti.button20.background:           rgb:e/d/c
+xcalc*ti.button25.background:           rgb:e/d/c
+xcalc*ti.button30.background:           rgb:e/d/c
+xcalc*ti.button35.background:           rgb:e/d/c
+xcalc*ti.button40.background:           rgb:b/b/e
+xcalc*ti.button22.background:           gray95
+xcalc*ti.button23.background:           gray95
+xcalc*ti.button24.background:           gray95
+xcalc*ti.button27.background:           gray95
+xcalc*ti.button28.background:           gray95
+xcalc*ti.button29.background:           gray95
+xcalc*ti.button32.background:           gray95
+xcalc*ti.button33.background:           gray95
+xcalc*ti.button34.background:           gray95
+xcalc*ti.button37.background:           gray95
+xcalc*ti.button38.background:           gray95
+xcalc*ti.button39.background:           gray95
+xcalc.ti.button20.label:                /
+
+XTerm*utf8Title:       true
+xterm*title:           xterm
+xterm*utf8:            1
+! xterm*font:            terminus:pixelsize=7
+! xterm*boldFont:        terminus:pixelsize=7
+
+XTerm*renderFont: true
+xterm*faceName:       Tewi 
+! xterm*boldfaceName:   Tewi 
+XTerm*faceSize: 9
+XTerm*boldMode:        false
+
+xterm*geometry:        145x45
+xterm*cutNewline:      false
+xterm*on4Clicks:       group
+xterm*on5Clicks:       page
+xterm*internalBorder:  1
+xterm*metaSendsEscape: true
+xterm*cursorBlink:     false
+xterm*charClass:       33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48,58:48,63:48,61:48,44:48,38:48,59:48
+xterm*jumpScroll:      true
+xterm*multiScroll:     true
+xterm*saveLines:       512
+
+! -- Colors -- !
+
+!- Vintage colors 
+! URxvt*background:     [95]#170F0D
+! URxvt*foreground:     #746C48
+! URxvt*cursorColor:    #6666CC
+! URxvt.underlineColor: #777777
+! URxvt*colorBD:        #C8B984
+! ! Black 
+! URxvt*color0:         #392925
+! ! DarkGrey
+! URxvt*color8:         #544B2E
+! ! DarkRed 
+! URxvt*color1:         #98724C
+! ! Red
+! URxvt*color9:         #AF652F
+! ! DarkGreen 
+! URxvt*color2:         #908F32
+! ! Green
+! URxvt*color10:        #C3C13D
+! ! DarkYellow 
+! URxvt*color3:         #AA964C
+! ! Yellow
+! URxvt*color11:        #C8B55B
+! ! DarkBlue 
+! URxvt*color4:         #7B854E
+! ! Blue
+! URxvt*color12:        #70A16C
+! ! DarkMagenta 
+! URxvt*color5:         #6B5644
+! ! Magenta
+! URxvt*color13:        #98724C
+! ! DarkCyan 
+! URxvt*color6:         #5C5142
+! ! Cyan
+! URxvt*color14:        #778725
+! ! LightGrey 
+! URxvt*color7:         #C8B55B
+! ! White
+! URxvt*color15:        #E4DC8C
+! URxvt.colorIT:            #cacaca
+! URxvt.colorBD:            #ae8510
+! URxvt.colorUL:            #a28c64
+
+!- gruvbox:
+! URxvt.color24: #076678
+! URxvt.color66: #427b58
+! URxvt.color88: #9d0006
+! URxvt.color96: #8f3f71
+! URxvt.color100: #79740e
+! URxvt.color108: #8ec07c
+! URxvt.color109: #83a598
+! URxvt.color130: #af3a03
+! URxvt.color136: #b57614
+! URxvt.color142: #b8bb26
+! URxvt.color167: #fb4934
+! URxvt.color175: #d3869b
+! URxvt.color208: #fe8019
+! URxvt.color214: #fabd2f
+! URxvt.color223: #ebdbb2
+! URxvt.color228: #f4e8ba
+! URxvt.color229: #fdf4c1
+! URxvt.color230: #ffffc8
+! URxvt.color234: #1d2021
+! URxvt.color235: #282828
+! URxvt.color236: #32302f
+! URxvt.color237: #3c3836
+! URxvt.color239: #504945
+! URxvt.color241: #665c54
+! URxvt.color243: #7c6f64
+! URxvt.color244: #928374
+! URxvt.color245: #928374
+! URxvt.color246: #a89984
+! URxvt.color248: #bdae93
+! URxvt.color250: #d5c4a1
+
+
+!- invisibone by baskerville
+! !(235, 248)
+! URxvt.background: #262626
+! URxvt.foreground: #A8A8A8
+! !(252)
+! URxvt.colorBD: #D0D0D0
+! URxvt.colorIT: #D0D0D0
+! URxvt.colorUL: #D0D0D0
+! !BLK (236, 243)
+! URxvt.color0: #303030
+! URxvt.color8: #767676
+! !WHT (252, 231)
+! URxvt.color7: #D0D0D0
+! URxvt.color15: #FFFFFF
+! !RED
+! URxvt.color1: #D370A3
+! URxvt.color9: #FFA7DA
+! !GRN
+! URxvt.color2: #6D9E3F
+! URxvt.color10: #A3D572
+! !BLU
+! URxvt.color4: #6095C5
+! URxvt.color12: #98CBFE
+! !YEL
+! URxvt.color3: #B58858
+! URxvt.color11: #EFBD8B
+! !CYN
+! URxvt.color6: #3BA275
+! URxvt.color14: #75DAA9
+! !MAG
+! URxvt.color5: #AC7BDE
+! URxvt.color13: #E5B0FF
+
+
+! turquoise term:
+
+URxvt*background:     [90]#004040
+URxvt*foreground:     #00C0C0
+URxvt*cursorColor:    #00C0C0
+URxvt*color0:         #004040
+URxvt*color1:         #00C0C0 
+URxvt*color2:         #00C0C0 
+URxvt*color3:         #00C0C0 
+URxvt*color4:         #00C0C0 
+URxvt*color5:         #00C0C0 
+URxvt*color6:         #00C0C0 
+URxvt*color7:         #00C0C0 
+URxvt*color8:         #00C0C0 
+URxvt*color9:         #00C0C0 
+URxvt*color10:        #00C0C0 
+URxvt*color11:        #00C0C0 
+URxvt*color12:        #00C0C0 
+URxvt*color13:        #00C0C0 
+URxvt*color14:        #00C0C0 
+URxvt*color15:        #00C0C0 
+URxvt*colorBD:        #00C0C0
+URxvt.colorIT:        #00C0C0
+URxvt.colorUL:        #00C0C0
+
+
+! 12ADAC term:
+
+! URxvt*background:     [90]#12ADAC
+! URxvt*foreground:     #E9E9E9
+! URxvt*cursorColor:    #E9E9E9
+! URxvt*color0:         #12ADAC
+! URxvt*color1:         #E9E9E9 
+! URxvt*color2:         #E9E9E9 
+! URxvt*color3:         #E9E9E9 
+! URxvt*color4:         #E9E9E9 
+! URxvt*color5:         #E9E9E9 
+! URxvt*color6:         #E9E9E9 
+! URxvt*color7:         #E9E9E9 
+! URxvt*color8:         #E9E9E9 
+! URxvt*color9:         #E9E9E9 
+! URxvt*color10:        #E9E9E9 
+! URxvt*color11:        #E9E9E9 
+! URxvt*color12:        #E9E9E9 
+! URxvt*color13:        #E9E9E9 
+! URxvt*color14:        #E9E9E9 
+! URxvt*color15:        #E9E9E9 
+! URxvt*colorBD:        #E9E9E9
+! URxvt.colorIT:        #E9E9E9
+! URxvt.colorUL:        #E9E9E9
+
+
+!- xterm - Parker Brothers colors
+! *background: #0F0E0F
+! *foreground: #A59461
+! *color0:     #322a2c
+! *color8:     #46423b
+! *color1:     #79220E
+! *color9:     #AA261F
+! *color2:     #344B1B
+! *color10:    #76550F
+! *color3:     #B45B00
+! *color11:    #B57F02
+! *color4:     #434045
+! *color12:    #908862
+! *color5:     #5C1E25
+! *color13:    #624A35
+! *color6:     #394745
+! *color14:    #393E38
+! *color7:     #AE8842
+! *color15:    #A59058
+
+! *background:#232323
+! *foreground:#e8e9ca
+! *color0:    #232323
+! *color1:    #8b3e2f
+! *color2:    #526f33
+! *color3:    #8B814C
+! *color4:    #4A708B
+! *color5:    #7A378B
+! *color6:    #528B8B
+! *color7:    #999999
+! *color8:    #4c4c4c
+! *color9:    #d75f00
+! *color10:   #8ea433
+! *color11:   #EEE685
+! *color12:   #9AC0CD
+! *color13:   #9F79EE
+! *color14:   #79CDCD
+! *color15:   #E8E9CA
+
+
+XTerm*utf8:             1
+XTerm*Background:       #004040
+XTerm*Foreground:       #00C0C0
+XTerm*HiForeColor:      #00C0C0
+XTerm*HiBackColor:      #004040
+
+XTerm*cursorColor:      #00C0C0
+
+XTerm*color0:           #004040
+XTerm*color1:           #00C0C0
+XTerm*color2:           #00C0C0
+XTerm*color3:           #00C0C0
+XTerm*color4:           #00C0C0
+XTerm*color5:           #00C0C0
+XTerm*color6:           #00C0C0
+XTerm*color7:           #00C0C0
+XTerm*color8:           #00C0C0
+XTerm*color9:           #00C0C0
+XTerm*color10:          #00C0C0
+XTerm*color11:          #00C0C0
+XTerm*color12:          #00C0C0
+XTerm*color13:          #00C0C0
+XTerm*color14:          #00C0C0
+XTerm*color15:          #00C0C0
+
