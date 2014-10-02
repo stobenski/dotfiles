@@ -1,0 +1,29 @@
+mpd_host = "127.0.0.1"
+# mpd_host = "192.168.0.104"
+mpd_port = "6600"
+mpd_music_dir = "~/Music"
+mpd_connection_timeout = "1"
+mpd_crossfade_time = "1"
+
+mouse_list_scroll_whole_page  = "no"
+ask_before_clearing_playlists = "no"
+playlist_display_mode         = classic
+browser_display_mode          = columns
+playlist_disable_highlight_delay = 0
+message_delay_time = 1
+
+song_list_format = "{$1%n > $9}{$7%a - $9}{$5%t$9}|{$8%f$9}$R{$6  %b$9}{$1 %l$9}"
+
+autocenter_mode = "yes"
+progressbar_look = "─╼·"
+user_interface = "alternative"
+alternative_header_first_line_format = "$0$aqqu$/a {$7%a - $9}{$5%t$9}|{$8%f$9} $0$atqq$/a$9"
+alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
+
+
+main_window_color              = "default"
+main_window_highlight_color    = "default"
+alternative_ui_separator_color = "yellow"
+progressbar_color              = "yellow"
+
+

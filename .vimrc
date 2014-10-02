@@ -1,9 +1,11 @@
 set nocompatible
 
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_italic = 0
-let g:gruvbox_termcolors = 16
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_italic = 0
+" let g:gruvbox_termcolors = 16
+
+colorscheme gotham
 
 syntax on
 filetype plugin indent on
@@ -113,8 +115,7 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'vim-perl/vim-perl'
 Plug 'jimenezrick/vimerl'
 Plug 'vim-scripts/restore_view.vim'
-" Plug ''
-" Plug ''
+Plug 'otommod/cue.vim'
 " Plug ''
 " Plug ''
 
@@ -393,7 +394,7 @@ Plug 'idanarye/vim-merginal'
 
 if $COLORTERM == 'tmux'
 
-    colorscheme gruvbox
+    colorscheme gotham
     Plug 'wellle/tmux-complete.vim'
 
     " -+- tmux-navigator:
@@ -568,7 +569,7 @@ let g:netrw_banner    = 0
 " -+- Airline:
 
 Plug 'bling/vim-airline'
-let g:airline_theme                        = 'luna'
+let g:airline_theme                        = 'gotham'
 let g:airline_powerline_fonts              = 1
 let g:airline_left_sep                     = '⮀'
 let g:airline_left_alt_sep                 = '⮁'
@@ -744,6 +745,7 @@ set foldtext=CustomFoldText()
 
 if has('gui_running')
     Plug 'chrisbra/Colorizer'
+    let g:airline_theme = 'gotham'
 endif
 
 call plug#end()

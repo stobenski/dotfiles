@@ -500,7 +500,6 @@ URxvt*colorBD:        #00C0C0
 URxvt.colorIT:        #00C0C0
 URxvt.colorUL:        #00C0C0
 
-
 ! 12ADAC term:
 
 ! URxvt*background:     [90]#12ADAC
