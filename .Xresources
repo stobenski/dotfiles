@@ -477,28 +477,50 @@ xterm*saveLines:       512
 
 ! turquoise term:
 
-URxvt*background:     [90]#004040
-URxvt*foreground:     #00C0C0
-URxvt*cursorColor:    #00C0C0
-URxvt*color0:         #004040
-URxvt*color1:         #00C0C0 
-URxvt*color2:         #00C0C0 
-URxvt*color3:         #00C0C0 
-URxvt*color4:         #00C0C0 
-URxvt*color5:         #00C0C0 
-URxvt*color6:         #00C0C0 
-URxvt*color7:         #00C0C0 
-URxvt*color8:         #00C0C0 
-URxvt*color9:         #00C0C0 
-URxvt*color10:        #00C0C0 
-URxvt*color11:        #00C0C0 
-URxvt*color12:        #00C0C0 
-URxvt*color13:        #00C0C0 
-URxvt*color14:        #00C0C0 
-URxvt*color15:        #00C0C0 
-URxvt*colorBD:        #00C0C0
-URxvt.colorIT:        #00C0C0
-URxvt.colorUL:        #00C0C0
+! URxvt*background:     [90]#004040
+! URxvt*foreground:     #00C0C0
+! URxvt*cursorColor:    #00C0C0
+! URxvt*color0:         #004040
+! URxvt*color1:         #00C0C0 
+! URxvt*color2:         #00C0C0 
+! URxvt*color3:         #00C0C0 
+! URxvt*color4:         #00C0C0 
+! URxvt*color5:         #00C0C0 
+! URxvt*color6:         #00C0C0 
+! URxvt*color7:         #00C0C0 
+! URxvt*color8:         #00C0C0 
+! URxvt*color9:         #00C0C0 
+! URxvt*color10:        #00C0C0 
+! URxvt*color11:        #00C0C0 
+! URxvt*color12:        #00C0C0 
+! URxvt*color13:        #00C0C0 
+! URxvt*color14:        #00C0C0 
+! URxvt*color15:        #00C0C0 
+! URxvt*colorBD:        #00C0C0
+! URxvt.colorIT:        #00C0C0
+! URxvt.colorUL:        #00C0C0
+
+! gotham:
+
+URxvt*foreground: #98d1ce
+URxvt*background: [85]#0a0f14
+! URxvt*cursorColor: #98d1ce
+URxvt*color0: #0a0f14
+URxvt*color8: #10151b
+URxvt*color1: #c33027
+URxvt*color9: #d26939
+URxvt*color2: #26a98b
+URxvt*color10: #081f2d
+URxvt*color3: #edb54b
+URxvt*color11: #245361
+URxvt*color4: #195465
+URxvt*color12: #093748
+URxvt*color5: #4e5165
+URxvt*color13: #888ba5
+URxvt*color6: #33859d
+URxvt*color14: #599caa
+URxvt*color7: #98d1ce
+URxvt*color15: #d3ebe9
 
 ! 12ADAC term:
 
