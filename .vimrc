@@ -67,7 +67,7 @@ set nuw=4
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'Shougo/unite.vim'
+Plug 'Shougo/unite.vim'
 " Plug 'chrisbra/changesPlugin'
 Plug 'chrisbra/NrrwRgn'
 " Plug 'godlygeek/tabular'
@@ -353,13 +353,13 @@ vnoremap <C-F8> gq
 
 " -+- html/haml/slim/jade/css/sass/scss/less:
 
-Plug 'tpope/vim-haml',            { 'for': 'haml'   }
-Plug 'wavded/vim-stylus',         { 'for': 'stylus' }
-Plug 'groenewege/vim-less',       { 'for': 'less'   }
-Plug 'digitaltoad/vim-jade',      { 'for': 'jade'   }
-Plug 'slim-template/vim-slim',    { 'for': 'slim'   }
-Plug 'othree/html5-syntax.vim',   { 'for': 'html'   }
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss'   }
+Plug 'tpope/vim-haml',            { 'for': ['haml']   }
+Plug 'wavded/vim-stylus',         { 'for': ['stylus'] }
+Plug 'groenewege/vim-less',       { 'for': ['less']   }
+Plug 'digitaltoad/vim-jade',      { 'for': ['jade']   }
+Plug 'slim-template/vim-slim',    { 'for': ['slim']   }
+Plug 'othree/html5-syntax.vim',   { 'for': ['html']   }
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss']   }
 
 Plug 'hail2u/vim-css3-syntax',    { 'for': ['html','css'] }
 augroup VimCSS3Syntax
@@ -445,13 +445,17 @@ endif
 
 " Plug 'edkolev/tmuxline.vim'
 
+" -+- yankround:
+
+Plug 'LeafCage/yankround.vim'
+
 " -+- xkb-switch:
 
 Plug 'lyokha/vim-xkbswitch'
 let g:XkbSwitchEnabled       = 1
 let g:XkbSwitchLib           = '/usr/lib64/libxkbswitch.so'
 let g:XkbSwitchIMappings     = ['ru']
-let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
+let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'", '<', '>', ',', '.']}
 
 " -+- Ukrainian keymap:
 
@@ -589,7 +593,8 @@ Plug 'rking/ag.vim'
 
 " -+- Syntastic:
 
-Plug 'scrooloose/syntastic', { 'for': ['ruby','html','css', 'scss', 'javascript', 'haml'] }
+" Plug 'scrooloose/syntastic', { 'for': ['ruby','html','css', 'scss', 'javascript', 'haml'] }
+Plug 'scrooloose/syntastic', { 'for': ['ruby','css', 'scss', 'javascript', 'haml'] }
 let g:syntastic_auto_jump               = 1
 let g:syntastic_error_symbol            = '✖'
 let g:syntastic_warning_symbol          = '►'
@@ -599,8 +604,8 @@ let g:syntastic_haml_checkers           = ['haml-lint'] " gem install haml-lint
 let g:syntastic_scss_checkers           = ['scss_lint'] " gem install scss-lint
 let g:syntastic_css_checkers            = ['csslint'  ] " sudo npm install -g csslint
 let g:syntastic_css_csslint_args        = "--ignore=zero-units"
-let g:syntastic_html_checkers           = ['tidy'     ] " http://w3c.github.io/tidy-html5 | app-text/htmltidy5
-let g:syntastic_html_tidy_ignore_errors = ['trimming empty', 'missing <li>', 'proprietary attribute "allowfullscreen"', 'unexpected </input>']
+" let g:syntastic_html_checkers           = ['tidy'     ] " http://w3c.github.io/tidy-html5 | app-text/htmltidy5
+" let g:syntastic_html_tidy_ignore_errors = ['trimming empty', 'missing <li>', 'proprietary attribute "allowfullscreen"', 'unexpected </input>']
 
 " -+- better-whitespace:
 
