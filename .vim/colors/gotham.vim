@@ -97,13 +97,14 @@ let s:linenr_background = 'base1'
 call s:Col('Normal', 'base6', s:background)
 
 " Line, cursor and so on.
-call s:Col('Cursor', '', 'base6')
+call s:Col('Cursor', 'base1', 'base6')
 call s:Col('CursorLine', '', 'base1')
 
 " Sign column, line numbers.
 call s:Col('LineNr', 'base4', 'base0')
 call s:Col('CursorLineNr', 'base5', s:linenr_background)
 call s:Col('SignColumn', '', s:linenr_background)
+call s:Col('ColorColumn', '', s:linenr_background)
 
 " Visual selection.
 call s:Col('Visual', '', 'base3')
@@ -191,6 +192,8 @@ call s:Col('DiffChange', 'cyan')
 call s:Col('DiffDelete', 'red')
 call s:Col('DiffText', 'yellow')
 
+" Directories (e.g. netrw).
+call s:Col('Directory', 'cyan')
 
 
 " Programming languages and filetypes ==========================================
@@ -205,7 +208,7 @@ call s:Col('htmlItalic', 'magenta')
 call s:Col('htmlBold', 'cyan', '')
 
 
-" Plugin highlighting ==========================================================
+" Plugin " =====================================================================
 
 " GitGutter
 call s:Col('GitGutterAdd', 'green', s:linenr_background)
@@ -219,3 +222,11 @@ call s:Col('CtrlPMatch', 'green')               " matching part
 call s:Col('CtrlPPrtBase', 'base4')             " '>>>' prompt
 call s:Col('CtrlPPrtText', 'cyan')              " text in the prompt
 call s:Col('CtrlPPtrCursor', 'base7')           " cursor in the prompt
+
+
+
+" Cleanup =====================================================================
+
+unlet s:colors
+unlet s:background
+unlet s:linenr_background

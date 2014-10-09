@@ -67,7 +67,7 @@ set nuw=4
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/unite.vim'
+" Plug 'Shougo/unite.vim'
 " Plug 'chrisbra/changesPlugin'
 Plug 'chrisbra/NrrwRgn'
 " Plug 'godlygeek/tabular'
@@ -116,7 +116,7 @@ Plug 'vim-perl/vim-perl'
 Plug 'jimenezrick/vimerl'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'otommod/cue.vim'
-" Plug ''
+Plug 'b4b4r07/vim-shellutils'
 " Plug ''
 
 " new: 
@@ -448,6 +448,7 @@ endif
 " -+- yankround:
 
 Plug 'LeafCage/yankround.vim'
+nnoremap <Leader>y :CtrlPYankRound<Cr>
 
 " -+- xkb-switch:
 

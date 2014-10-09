@@ -27,7 +27,6 @@ let g:airline#themes#gotham#palette = {}
 
 " Just remember:
 " [guifg, guibg, ctermfg, ctermbg, opts]
-"
 function! s:Array(fg, bg, ...)
   let result = [s:c[a:fg].gui, s:c[a:bg].gui, s:c[a:fg].cterm, s:c[a:bg].cterm]
 

@@ -82,33 +82,57 @@ browser = firefox
 
 # gotham:
 
-foreground      = #99d1ce
-foreground_bold = #99d1ce
-background      = #0a0f14
+# foreground      = #99d1ce
+# foreground_bold = #99d1ce
+# background      = #0a0f14
 
-color0  = #0a0f14
-color8  = #10151b
+# color0  = #0a0f14
+# color8  = #10151b
 
-color1  = #c23127
-color9  = #d26936
+# color1  = #c23127
+# color9  = #d26936
 
-color2  = #2aa889
+# color2  = #2aa889
+# color10 = #081f2d
+
+# color3  = #edb442
+# color11 = #245361
+
+# color4  = #185466
+# color12 = #093749
+
+# color5  = #4e5166
+# color13 = #888ca6
+
+# color6  = #33859e
+# color14 = #599cab
+
+# color7  = #99d1ce
+# color15 = #d3ebe9
+
+# fixed gotham:
+
+foreground = #98d1ce
+foreground_bold = #98d1ce
+cursor = #98d1ce
+background = #0a0f14
+color0 = #0a0f14
+color8 = #10151b
+color1 = #c33027
+color9 = #d26939
+color2 = #26a98b
 color10 = #081f2d
-
-color3  = #edb442
+color3 = #edb54b
 color11 = #245361
-
-color4  = #185466
-color12 = #093749
-
-color5  = #4e5166
-color13 = #888ca6
-
-color6  = #33859e
-color14 = #599cab
-
-color7  = #99d1ce
+color4 = #195465
+color12 = #093748
+color5 = #4e5165
+color13 = #888ba5
+color6 = #33859d
+color14 = #599caa
+color7 = #98d1ce
 color15 = #d3ebe9
+
 
 [hints]
 # font = Monospace 12
