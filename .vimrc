@@ -5,7 +5,7 @@ set nocompatible
 " let g:gruvbox_italic = 0
 " let g:gruvbox_termcolors = 16
 
-colorscheme gotham
+colorscheme forsterite
 
 syntax on
 filetype plugin indent on
@@ -19,10 +19,12 @@ set encoding=utf-8
 set expandtab
 set fileencodings=utf-8,cp1251,koi8-r,cp866
 set foldcolumn=1
+set grepprg=ag
 set hidden
 set history=200
 set hlsearch
-set ignorecase smartcase
+set ignorecase
+set smartcase
 set incsearch
 " set iskeyword=
 set laststatus=2
@@ -52,7 +54,6 @@ set wildignore=*.swp,*.bak,*.pyc,*/.git/**/*,*/.hg/**/*,*/.svn/**/*
 set wildignorecase
 set wildmenu
 set wildmode=longest,full
-set grepprg=ag
 set breakindent
 " set cindent
 set splitbelow
@@ -63,6 +64,8 @@ set nuw=4
 " autocmd InsertEnter * set nornu
 " autocmd InsertLeave * set rnu
 
+" set statusline=%<\ %f\ %m%y%w%=\ L:\ \%l\/\%L\ C:\ \%c\ 
+
 " -+- Plugins:
 
 call plug#begin('~/.vim/plugged')
@@ -72,6 +75,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'chrisbra/NrrwRgn'
 " Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
+" Plug 'Valloric/MatchTagAlways'
 " Plug 'chreekat/vim-paren-crosshairs'
 Plug 'itchyny/calendar.vim'
 Plug 'jimsei/winresizer'
@@ -113,16 +117,23 @@ Plug 'mbbill/fencview'
 Plug 'jaxbot/semantic-highlight.vim'
 " Plug 'wikitopian/hardmode'
 Plug 'vim-perl/vim-perl'
-Plug 'jimenezrick/vimerl'
+" Plug 'jimenezrick/vimerl'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'otommod/cue.vim'
 Plug 'b4b4r07/vim-shellutils'
+" Plug 'sukima/xmledit'
+" Plug 'maciakl/vim-neatstatus'
+" Plug ''
+" Plug ''
 " Plug ''
 
 " new: 
 
 " Plug 'yssl/autocwd.vim'
 " Plug 'rhysd/clever-f.vim'
+" Plug ''
+" Plug ''
+" Plug ''
 " Plug ''
 
 set       pastetoggle  =<F2>
@@ -218,7 +229,11 @@ Plug 'tacahiroy/ctrlp-funky'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_syntax_highlight = 1
 nnoremap <Leader>fu :CtrlPFunky<Cr>
-map <S-Tab> :CtrlPBuffer<CR>
+
+" -+- CtrlPHiBuff:
+
+Plug 'sergey-vlasov/ctrlp-hibuff'
+map <S-Tab> :CtrlPHiBuff<CR>
 
 " -+- vim-commentary:
 
@@ -271,6 +286,10 @@ let g:easy_align_delimiters    = {
 \ ')': { 'pattern': '[()]', 'left_margin': 0, 'right_margin': 0, 'stick_to_left': 0 },
 \ 'd': { 'pattern': ' \(\S\+\s*[;=]\)\@=', 'left_margin': 0, 'right_margin': 0 }
 \ }
+
+" -+- EasyGrep:
+
+Plug 'dkprice/vim-easygrep'
 
 " -+- vim-after-object:
 
@@ -456,7 +475,7 @@ Plug 'lyokha/vim-xkbswitch'
 let g:XkbSwitchEnabled       = 1
 let g:XkbSwitchLib           = '/usr/lib64/libxkbswitch.so'
 let g:XkbSwitchIMappings     = ['ru']
-let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'", '<', '>', ',', '.']}
+let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'", '<', '>', ',', '.', '"']}
 
 " -+- Ukrainian keymap:
 
@@ -480,6 +499,14 @@ Plug 'paradigm/TextObjectify'
 " Plug 'inkarkat/argtextobj.vim'
 " Plug 'kana/vim-textobj-user'
 " Plug 'wellle/targets.vim'
+
+" -+- incsearch:
+
+Plug 'haya14busa/incsearch.vim'
+map <Leader>/  <Plug>(incsearch-forward)
+map <Leader>?  <Plug>(incsearch-backward)
+map <Leader>g/ <Plug>(incsearch-stay)
+" highlight IncSearchCursor ctermfg=0 ctermbg=9
 
 " -+- sideaways:
 
@@ -574,7 +601,7 @@ let g:netrw_banner    = 0
 " -+- Airline:
 
 Plug 'bling/vim-airline'
-let g:airline_theme                        = 'gotham'
+let g:airline_theme                        = 'forsterite'
 let g:airline_powerline_fonts              = 1
 let g:airline_left_sep                     = '⮀'
 let g:airline_left_alt_sep                 = '⮁'

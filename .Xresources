@@ -502,25 +502,64 @@ xterm*saveLines:       512
 
 ! gotham:
 
-URxvt*foreground: #98d1ce
-URxvt*background: [85]#0a0f14
-! URxvt*cursorColor: #98d1ce
-URxvt*color0: #0a0f14
-URxvt*color8: #10151b
-URxvt*color1: #c33027
-URxvt*color9: #d26939
-URxvt*color2: #26a98b
-URxvt*color10: #081f2d
-URxvt*color3: #edb54b
-URxvt*color11: #245361
-URxvt*color4: #195465
-URxvt*color12: #093748
-URxvt*color5: #4e5165
-URxvt*color13: #888ba5
-URxvt*color6: #33859d
-URxvt*color14: #599caa
-URxvt*color7: #98d1ce
-URxvt*color15: #d3ebe9
+! URxvt*foreground: #98d1ce
+! URxvt*background: [85]#0a0f14
+! ! URxvt*cursorColor: #98d1ce
+! URxvt*color0: #0a0f14
+! URxvt*color8: #10151b
+! URxvt*color1: #c33027
+! URxvt*color9: #d26939
+! URxvt*color2: #26a98b
+! URxvt*color10: #081f2d
+! URxvt*color3: #edb54b
+! URxvt*color11: #245361
+! URxvt*color4: #195465
+! URxvt*color12: #093748
+! URxvt*color5: #4e5165
+! URxvt*color13: #888ba5
+! URxvt*color6: #33859d
+! URxvt*color14: #599caa
+! URxvt*color7: #98d1ce
+! URxvt*color15: #d3ebe9
+
+! base16-Paraiso
+
+#define base00 [85]#2f1e2e
+#define base01 #41323f
+#define base02 #4f424c
+#define base03 #776e71
+#define base04 #8d8687
+#define base05 #a39e9b
+#define base06 #b9b6b0
+#define base07 #e7e9db
+#define base08 #ef6155
+#define base09 #f99b15
+#define base0A #fec418
+#define base0B #48b685
+#define base0C #5bc4bf
+#define base0D #06b6ef
+#define base0E #815ba4
+#define base0F #e96ba8
+
+URxvt*foreground:  base05
+URxvt*background:  base00
+URxvt*cursorColor: base05
+URxvt*color0:      base00
+URxvt*color1:      base08
+URxvt*color2:      base0B
+URxvt*color3:      base0A
+URxvt*color4:      base0D
+URxvt*color5:      base0E
+URxvt*color6:      base0C
+URxvt*color7:      base05
+URxvt*color8:      base03
+URxvt*color9:      base08
+URxvt*color10:     base0B
+URxvt*color11:     base0A
+URxvt*color12:     base0D
+URxvt*color13:     base0E
+URxvt*color14:     base0C
+URxvt*color15:     base07
 
 ! 12ADAC term:
 

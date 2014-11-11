@@ -15,6 +15,7 @@ scrollback_lines    = 10000
 search_wrap         = false
 icon_name           = termite
 geometry            = 1480x800+100+100
+fullscreen          = false
 # modify_other_keys = false
 
 ## "system", "on" or "off"
@@ -56,82 +57,70 @@ browser = firefox
 # # foreground_dim  = #666666
 # # cursor          = #dcdccc
 
-# # gotham:
-
-# foreground      = #89c8c3
-# foreground_bold = #89c8c3
-# background      = #0c1014
-# color0          = #0c1014
-# color1          = #b31e1e
-# color2          = #269a76
-# color3          = #e7a634
-# color4          = #154253
-# color5          = #3d3f53
-# color6          = #29728c
-# color7          = #89c8c3
-# color8          = #0e1115
-# color9          = #c65429
-# color10         = #091f2e
-# color11         = #1c424e
-# color12         = #0b2939
-# color13         = #757895
-# color14         = #498b9b
-# color15         = #cae7e4
-# # # foreground_dim  = #666666
-# # # cursor          = #dcdccc
-
 # gotham:
 
-# foreground      = #99d1ce
-# foreground_bold = #99d1ce
-# background      = #0a0f14
-
+# background      = rgba(10, 15, 20, 0.8)
+# # background      = #0a0f14
+# foreground      = #98d1ce
+# foreground_bold = #98d1ce
+# cursor  = #98d1ce
 # color0  = #0a0f14
 # color8  = #10151b
-
-# color1  = #c23127
-# color9  = #d26936
-
-# color2  = #2aa889
+# color1  = #c33027
+# color9  = #d26939
+# color2  = #26a98b
 # color10 = #081f2d
-
-# color3  = #edb442
+# color3  = #edb54b
 # color11 = #245361
-
-# color4  = #185466
-# color12 = #093749
-
-# color5  = #4e5166
-# color13 = #888ca6
-
-# color6  = #33859e
-# color14 = #599cab
-
-# color7  = #99d1ce
+# color4  = #195465
+# color12 = #093748
+# color5  = #4e5165
+# color13 = #888ba5
+# color6  = #33859d
+# color14 = #599caa
+# color7  = #98d1ce
 # color15 = #d3ebe9
 
-# fixed gotham:
+# pro:
 
-foreground = #98d1ce
-foreground_bold = #98d1ce
-cursor = #98d1ce
-background = #0a0f14
-color0 = #0a0f14
-color8 = #10151b
-color1 = #c33027
-color9 = #d26939
-color2 = #26a98b
-color10 = #081f2d
-color3 = #edb54b
-color11 = #245361
-color4 = #195465
-color12 = #093748
-color5 = #4e5165
-color13 = #888ba5
-color6 = #33859d
-color14 = #599caa
-color7 = #98d1ce
-color15 = #d3ebe9
+# background      = rgba(22, 26, 25, 0.8)
+background      = #161a19
+foreground      = #c5c1b7
+foreground_bold = #c5c1b7
+# cursor          = #354341
+
+#black normal / bright
+color0          = #161a19
+color8          = #354341
+
+#red normal / bright
+color1          = #c34627
+color9          = #d26939
+
+#green normal / bright
+color2          = #0b6d5c
+color10         = #229986
+
+#yellow normal / bright
+color3          = #edb54b
+color11         = #c7c32a
+
+#blue normal / bright
+color4          = #5b7a75
+color12         = #559ca8
+
+#magenta normal / bright
+color5          = #4e5165
+color13         = #888ba5
+
+#cyan normal / bright
+color6          = #02c9de
+color14         = #4ed3fc
+
+#white normal / bright
+color7          = #edebe6
+color15         = #fcfcfa
+
 
 
 [hints]
