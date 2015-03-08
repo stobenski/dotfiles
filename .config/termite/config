@@ -1,4 +1,3 @@
-
 [options]
 resize_grip         = false
 scroll_on_output    = false
@@ -81,10 +80,13 @@ browser = firefox
 # color7  = #98d1ce
 # color15 = #d3ebe9
 
-# pro:
+# Emerald:
 
-# background      = rgba(22, 26, 25, 0.8)
-background      = #161a19
+# if unset, will reverse foreground and background
+# highlight = #2f2f2f
+
+background      = rgba(22, 26, 25, 0.8)
+; background      = #161a19
 foreground      = #c5c1b7
 foreground_bold = #c5c1b7
 # cursor          = #354341
@@ -120,7 +122,6 @@ color14         = #4ed3fc
 #white normal / bright
 color7          = #edebe6
 color15         = #fcfcfa
-
 
 
 [hints]

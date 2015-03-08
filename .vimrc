@@ -1,11 +1,6 @@
 set nocompatible
 
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_italic = 0
-" let g:gruvbox_termcolors = 16
-
-colorscheme forsterite
+colorscheme emerald
 
 syntax on
 filetype plugin indent on
@@ -58,71 +53,47 @@ set breakindent
 " set cindent
 set splitbelow
 set splitright
-
+" set ve=all
 set nu
 set nuw=4
-" autocmd InsertEnter * set nornu
-" autocmd InsertLeave * set rnu
-
-" set statusline=%<\ %f\ %m%y%w%=\ L:\ \%l\/\%L\ C:\ \%c\ 
 
 " -+- Plugins:
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'Shougo/unite.vim'
-" Plug 'chrisbra/changesPlugin'
 Plug 'chrisbra/NrrwRgn'
-" Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
 " Plug 'Valloric/MatchTagAlways'
-" Plug 'chreekat/vim-paren-crosshairs'
 Plug 'itchyny/calendar.vim'
 Plug 'jimsei/winresizer'
-" Plug 'justinmk/vim-gtfo'
-" Plug 'Lokaltog/vim-easymotion'
-" Plug 'mattn/gist-vim'
-" Plug 'merlinrebrovic/focus.vim'
-Plug 'mhinz/vim-startify'
 Plug 'nelstrom/vim-visual-star-search'
-" Plug 'osyo-manga/vim-anzu'
-" Plug 'osyo-manga/vim-marching'
 Plug 'osyo-manga/vim-over'
-" Plug 'osyo-manga/vim-reunions'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-endwise',   { 'for': [ 'ruby','vim','sh','zsh' ] }
-" Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell.vim'
-" Plug 'sotte/presenting.vim'
-" Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-" Plug 'tybenz/vimdeck'
-" Plug 'vim-scripts/SyntaxRange'
 Plug 'zweifisch/pipe2eval'
-" Plug 'terryma/vim-expand-region'
-" Plug 'jaxbot/selective-undo.vim' " in development
 Plug 'tyru/open-browser.vim'
-" Plug 'jeetsukumaran/vim-filebeagle'
-" Plug 'terryma/vim-multiple-cursors'
-Plug 'arecarn/crunch'
+" Plug 'arecarn/crunch'
 " Plug 'godlygeek/csapprox'
-" Plug 'spolu/dwm.vim'
 Plug 'hickop/vim-foldlist'
 Plug 'mbbill/fencview'
 Plug 'jaxbot/semantic-highlight.vim'
-" Plug 'wikitopian/hardmode'
 Plug 'vim-perl/vim-perl'
 " Plug 'jimenezrick/vimerl'
-Plug 'vim-scripts/restore_view.vim'
 Plug 'otommod/cue.vim'
-Plug 'b4b4r07/vim-shellutils'
-" Plug 'sukima/xmledit'
-" Plug 'maciakl/vim-neatstatus'
+Plug 'elzr/vim-json'
+Plug 'ryanss/vim-hackernews'
+Plug 'cespare/vim-toml'
+" Plug ''
+" Plug ''
+" Plug ''
+" Plug ''
+" Plug ''
 " Plug ''
 " Plug ''
 " Plug ''
@@ -131,6 +102,39 @@ Plug 'b4b4r07/vim-shellutils'
 
 " Plug 'yssl/autocwd.vim'
 " Plug 'rhysd/clever-f.vim'
+" Plug 'ap/vim-buftabline'
+" Plug 'mattn/sonictemplate-vim'
+" Plug 'deris/vim-rengbang'
+" Plug 'deris/vim-shot-f'
+" Plug 'MattesGroeger/vim-bookmarks'
+" Plug 'waiting-for-dev/vim-www'
+" Plug 'othree/eregex.vim'
+" Plug 'boucherm/ShowMotion'
+" Plug 'haya14busa/vim-asterisk'
+" Plug 'othree/jspc.vim'
+" Plug 'mtth/scratch.vim'
+" Plug 'idanarye/vim-casetrate'
+" Plug 'szw/vim-ctrlspace'
+" Plug 'gorkunov/smartpairs.vim'
+" Plug 'pelodelfuego/vim-swoop'
+" Plug 'janko-m/vim-test'
+" Plug 'nicwest/QQ.vim'
+" Plug 'osyo-manga/vim-brightest'
+" Plug 't9md/vim-quickhl'
+" Plug 'vasconcelloslf/vim-interestingwords'
+" Plug 'cohama/lexima.vim'
+" Plug 'Konfekt/FastFold'
+" Plug 'AndrewRadev/multichange.vim'
+" Plug 'itchyny/vim-cursorword'
+" Plug 'osyo-manga/vim-anzu'
+" Plug 'scottupdike/vim-wholelinecolor'
+" Plug 'gregsexton/gitv'
+" Plug ''
+" Plug ''
+" Plug ''
+" Plug ''
+" Plug ''
+" Plug ''
 " Plug ''
 " Plug ''
 " Plug ''
@@ -191,28 +195,23 @@ nnoremap  <expr> gb    '`[' . strpart(getregtype(), 0, 1) . '`]'
 au BufEnter * setl fo-=cro
 au FileType python setlocal et sw=4 ts=4 sts=4
 au FileType ruby,html,haml,eruby,yaml,sass,scss,cucumber setlocal et sw=2 ts=2 sts=2
-" au FileType lisp,clojure setlocal isk+=-
-" au FileType ruby inoremap { {  }<Left><Left>
-" au FileType ruby inoremap <Bar> <Bar><Space><Space><Bar><Left><Left>
+au BufRead,BufNewFile *.cson set ft=coffee
+autocmd FileType slim                                set commentstring=/\ %s
+autocmd FileType xdefaults                           set commentstring=!%s
+autocmd FileType gtkrc,nginx,inittab,tmux,sshdconfig set commentstring=#%s
 
-" -+- NeoComplete:
+" -+- neocomplete:
 
 Plug 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup=1
 " let g:neocomplete#enable_smart_case=1
 let g:neocomplete#force_overwrite_completefunc=1
 
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"   let g:neocomplete#force_omni_input_patterns = {}
-" endif
-
-" https://github.com/Shougo/neocomplete.vim/issues/91
-" let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
-
 " -+- neosnippet:
 
 Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets', {'for': ['ruby', 'vim'] }
+Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet-snippets', {'for': ['ruby', 'vim'] }
 " Plug 'honza/vim-snippets'
 
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -222,30 +221,41 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+" -+- vim-surround:
+
+Plug 'tpope/vim-surround'
+nmap ct cstt
+
 " -+- CtrlP:
 
-Plug 'kien/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
+" Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+map <S-Tab> :CtrlPBuffer<CR>
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " only git project
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " only git project
+" Plug 'tacahiroy/ctrlp-funky'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_syntax_highlight = 1
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 
-" -+- CtrlPHiBuff:
-
-Plug 'sergey-vlasov/ctrlp-hibuff'
-map <S-Tab> :CtrlPHiBuff<CR>
-
 " -+- vim-commentary:
 
 Plug 'tpope/vim-commentary'
-autocmd FileType slim                                set commentstring=/\ %s
-autocmd FileType xdefaults                           set commentstring=!%s
-autocmd FileType gtkrc,nginx,inittab,tmux,sshdconfig set commentstring=#%s
+
+" -+- tcomment:
+
+Plug 'tomtom/tcomment_vim'
+noremap <C-\> :TComment<CR>
 
 " -+- Documentation:
 
 Plug 'Keithbsmiley/investigate.vim'
 nnoremap <F1> :call investigate#Investigate()<CR>
+
+" -+- easymotion:
+
+Plug 'Lokaltog/vim-easymotion'
+map ` <Plug>(easymotion-prefix)
 
 " -+- vim-fifo:
 
@@ -257,10 +267,17 @@ nnoremap <F1> :call investigate#Investigate()<CR>
 " let g:vimfifo#rb       = "ruby %s"
 " let g:vimfifo#ssh      = "ssh $(head -n1 %s) -p 2222"
 
+" -+- transform:
+
+Plug 't9md/vim-transform'
+nmap t <Plug>(transform)
+xmap t <Plug>(transform)
+imap t <Plug>(transform)
+
 " -+- vim-pipe:
 
-Plug 'krisajenkins/vim-pipe'
-let g:vimpipe_silent=1
+" Plug 'krisajenkins/vim-pipe'
+" let g:vimpipe_silent=1
 
 " -+- taskwarrior:
 
@@ -287,6 +304,22 @@ let g:easy_align_delimiters    = {
 \ 'd': { 'pattern': ' \(\S\+\s*[;=]\)\@=', 'left_margin': 0, 'right_margin': 0 }
 \ }
 
+" -+- peekaboo:
+
+Plug 'junegunn/vim-peekaboo'
+let g:peekaboo_window = 'vertical botright 50new'
+" let g:peekaboo_delay  = 750
+
+" -+- vim-sort-motion:
+
+Plug 'christoomey/vim-sort-motion'
+let g:sort_motion_flags = "i"
+
+" -+- vim-argwrap:
+
+Plug 'FooSoft/vim-argwrap'
+nnoremap <silent> <leader>a :call argwrap#toggle()<CR>
+
 " -+- EasyGrep:
 
 Plug 'dkprice/vim-easygrep'
@@ -296,15 +329,6 @@ Plug 'dkprice/vim-easygrep'
 Plug 'junegunn/vim-after-object'
 autocmd VimEnter * call after_object#enable('=', '-', ':', '#', ' ')
 
-" -+- vim-ctrlspace:
-
-" Plug 'szw/vim-ctrlspace'
-" let g:ctrlspace_use_tabline = 1
-" hi CtrlSpaceSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
-" hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
-" hi CtrlSpaceSearch   ctermfg=220  ctermbg=NONE cterm=bold
-" hi CtrlSpaceStatus   ctermfg=230  ctermbg=234  cterm=NONE
-
 " -+- Ruby:
 
 Plug 'vim-ruby/vim-ruby'
@@ -312,7 +336,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 " Plug 'astashov/vim-ruby-debugger'
-Plug 'xmisao/rubyjump.vim'
+" Plug 'xmisao/rubyjump.vim'
 
 let ruby_operators                   = 1
 " let ruby_fold                        = 1
@@ -320,6 +344,45 @@ let ruby_operators                   = 1
 " let g:rubycomplete_rails             = 1
 " let g:rubycomplete_buffer_loading    = 1
 " let g:rubycomplete_classes_in_global = 1
+
+Plug 'gorkunov/smartgf.vim', { 'for': 'ruby' }
+map <C-F5> :SmargfRefreshTags<CR>
+" let g:smartgf_auto_refresh_ctags   = 0
+" let g:smartgf_key                  = 'gf'
+" let g:smartgf_no_filter_key        = 'gF'
+" let g:smartgf_enable_gems_search   = 1
+" let g:smartgf_auto_refresh_ctags   = 1
+" let g:smartgf_max_entries_per_page = 9
+" let g:smartgf_divider_width        = 5
+" let g:smartgf_extensions           = ['.ls', '.coffee', '.js']
+
+" -+- Go:
+
+Plug 'fatih/vim-go', { 'for': 'go' }
+" au FileType go nmap <Leader>s <Plug>(go-implements)
+" au FileType go nmap <Leader>i <Plug>(go-info)
+" au FileType go nmap <Leader>gd <Plug>(go-doc)
+" au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+" au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+" au FileType go nmap <leader>r <Plug>(go-run)
+" au FileType go nmap <leader>b <Plug>(go-build)
+" au FileType go nmap <leader>t <Plug>(go-test)
+" au FileType go nmap <leader>c <Plug>(go-coverage)
+" au FileType go nmap <Leader>ds <Plug>(go-def-split)
+" au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+" au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+" au FileType go nmap <Leader>e <Plug>(go-rename)
+" let g:go_play_open_browser           = 0
+" let g:go_fmt_fail_silently           = 1
+" let g:go_fmt_command                 = "goimports"
+" let g:go_fmt_autosave                = 0
+" let g:go_bin_path                    = expand("~/.gotools")
+" let g:go_bin_path                    = ""
+" let g:go_highlight_functions         = 1
+" let g:go_highlight_methods           = 1
+" let g:go_highlight_structs           = 1
+" let g:go_highlight_operators         = 1
+" let g:go_highlight_build_constraints = 1
 
 " -+- Clojure:
 
@@ -342,12 +405,15 @@ Plug 'amdt/vim-niji'
 " Plug 'othree/yajs.vim',              { 'for': 'javascript' }
 
 Plug 'moll/vim-node'
-Plug 'pangloss/vim-javascript',      { 'for': 'javascript' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-let javascript_enable_domhtmlcss = 1
-let g:html_indent_inctags        = "html,body,head,tbody"
-let g:html_indent_script1        = "inc"
-let g:html_indent_style1         = "inc"
+Plug 'pangloss/vim-javascript',      { 'for': ['javascript', 'html'] }
+Plug 'jelera/vim-javascript-syntax', { 'for': ['javascript', 'html'] }
+let g:javascript_enable_domhtmlcss = 1
+let g:html_indent_inctags          = "html,body,head,tbody"
+let g:html_indent_script1          = "inc"
+let g:html_indent_style1           = "inc"
+
+" Plug 'mustache/vim-mustache-handlebars'
+" let g:mustache_abbreviations = 1
 
 " Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 " let b:current_syntax       = 'javascript'
@@ -360,6 +426,10 @@ Plug 'marijnh/tern_for_vim',                   { 'for': 'javascript' } " sudo np
 " au FileType javascript nmap <buffer> <leader>j :TernDef<CR>
 " au FileType javascript nmap <buffer> <leader>k :TernRefs<CR>
 " au FileType javascript nmap <buffer> <leader>l :TernType<CR>
+
+" -+- CoffeeScript
+
+" Plug 'kchmck/vim-coffee-script'  " sudo npm install -g coffeelint 
 
 " -+- Autoformat (beautify):
 
@@ -377,7 +447,7 @@ Plug 'wavded/vim-stylus',         { 'for': ['stylus'] }
 Plug 'groenewege/vim-less',       { 'for': ['less']   }
 Plug 'digitaltoad/vim-jade',      { 'for': ['jade']   }
 Plug 'slim-template/vim-slim',    { 'for': ['slim']   }
-Plug 'othree/html5-syntax.vim',   { 'for': ['html']   }
+Plug 'othree/html5.vim',          { 'for': ['html']   }
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss']   }
 
 Plug 'hail2u/vim-css3-syntax',    { 'for': ['html','css'] }
@@ -386,10 +456,13 @@ augroup VimCSS3Syntax
   autocmd FileType css setlocal iskeyword+=-
 augroup END
 
-Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','less'] }
-au FileType html,css,sass,scss,less imap <expr><F4> emmet#expandAbbrIntelligent("\<tab>")
-au FileType html,css,sass,scss,less imap <expr>jk   emmet#expandAbbrIntelligent("\<tab>")
-au FileType html                    imap <C-\>      <CR><CR><Esc>ki<Tab>
+" -+- Emmet:
+
+Plug 'mattn/emmet-vim',           { 'for': ['html','xhtml','css','sass','scss','xml'] }
+au FileType html,css,sass,scss,less imap <expr>jk  emmet#expandAbbrIntelligent("\<tab>")
+au FileType html                    imap <C-\>     <CR><CR><Esc>ki<Tab>
+au FileType html,xhtml,xml          imap <F8>      <C-o>f><C-o>a
+au FileType html,xhtml,xml          imap <F5>      <C-o>F<
 
 " -+- delimitMate:
 
@@ -413,7 +486,6 @@ Plug 'idanarye/vim-merginal'
 
 if $COLORTERM == 'tmux'
 
-    colorscheme gotham
     Plug 'wellle/tmux-complete.vim'
 
     " -+- tmux-navigator:
@@ -460,30 +532,6 @@ if $COLORTERM == 'tmux'
 
 endif
 
-" -+- tmuxline:
-
-" Plug 'edkolev/tmuxline.vim'
-
-" -+- yankround:
-
-Plug 'LeafCage/yankround.vim'
-nnoremap <Leader>y :CtrlPYankRound<Cr>
-
-" -+- xkb-switch:
-
-Plug 'lyokha/vim-xkbswitch'
-let g:XkbSwitchEnabled       = 1
-let g:XkbSwitchLib           = '/usr/lib64/libxkbswitch.so'
-let g:XkbSwitchIMappings     = ['ru']
-let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'", '<', '>', ',', '.', '"']}
-
-" -+- Ukrainian keymap:
-
-Plug 'vim-scripts/ukrainian-enhanced.vim'
-set keymap=ukrainian-enhanced
-set iminsert=0
-set imsearch=0
-
 " -+- vim-move:
 
 Plug 'matze/vim-move'
@@ -496,17 +544,10 @@ vmap <C-Up>   <Plug>MoveBlockUp
 " -+- Text Objects:
 
 Plug 'paradigm/TextObjectify'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user'
 " Plug 'inkarkat/argtextobj.vim'
-" Plug 'kana/vim-textobj-user'
 " Plug 'wellle/targets.vim'
-
-" -+- incsearch:
-
-Plug 'haya14busa/incsearch.vim'
-map <Leader>/  <Plug>(incsearch-forward)
-map <Leader>?  <Plug>(incsearch-backward)
-map <Leader>g/ <Plug>(incsearch-stay)
-" highlight IncSearchCursor ctermfg=0 ctermbg=9
 
 " -+- sideaways:
 
@@ -518,7 +559,7 @@ nnoremap <C-Right> :SidewaysRight<cr>
 
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-nnoremap <Leader><Space> :Goyo<CR>
+" nnoremap <Leader><Space> :Goyo<CR>
 
 function! GoyoBefore()
   Limelight
@@ -534,7 +575,33 @@ let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
-hi! def link ObliqueCurrentMatch DiffChange
+map / <Plug>(Oblique-/)
+map ? <Plug>(Oblique-?)
+" hi! def link ObliqueCurrentMatch DiffChange
+
+" -+- xkb-switch:
+
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled       = 1
+let g:XkbSwitchLib           = '/usr/lib64/libxkbswitch.so'
+let g:XkbSwitchIMappings     = ['ru']
+let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'", '<', '>', ',', '.', '"']}
+
+" -+- Ukrainian keymap:
+
+" Plug 'vim-scripts/ukrainian-enhanced.vim'
+" set keymap=ukrainian-enhanced
+" set iminsert=0
+" set imsearch=0
+
+" -+- incsearch:
+
+" Plug 'haya14busa/incsearch.vim'
+" map / <Plug>(incsearch-forward)
+" map ? <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
+" let g:incsearch#auto_nohlsearch = 1
+" highlight IncSearchCursor ctermfg=3 ctermbg=9
 
 " -+- undotree:
 
@@ -571,12 +638,13 @@ Plug 'justinmk/vim-sneak'
 
 " -+- Tagbar:
 
-" Plug 'majutsushi/tagbar', { 'for': ['javascript', 'css', 'ruby', 'markdown'] }
-" nmap <F9> :TagbarToggle<CR>
-" let g:tagbar_sort          = 0
-" let g:tagbar_autofocus     = 1
-" let g:tagbar_width         = 32
-" let g:tagbar_autoclose     = 1
+Plug 'majutsushi/tagbar', { 'for': ['javascript', 'css', 'ruby', 'markdown'] }
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
+nmap <C-F9> :TagbarToggle<CR>
+let g:tagbar_sort            = 0
+let g:tagbar_autofocus       = 1
+let g:tagbar_width           = 32
+let g:tagbar_autoclose       = 1
 " let g:tagbar_type_css        = { 'ctagstype': 'Css', 'kinds': ['c:classes', 's:selectors', 'i:identities'] }
 " let g:tagbar_type_markdown   = { 'ctagstype': 'markdown', 'kinds': ['h:Heading_L1', 'i:Heading_L2', 'k:Heading_L3'] }
 " let g:tagbar_type_ruby       = { 'kinds': ['m:modules', 'c:classes', 'd:describes', 'C:contexts', 'f:methods', 'F:singleton methods'] }
@@ -590,29 +658,76 @@ let g:netrw_banner    = 0
 
 " -+- Abbreviations:
 
-" ab #!b #!/bin/bash
+ab #!b #!/bin/bash
 " ab #!r #!/usr/bin/ruby
 " ab #!p #!/usr/bin/python3
 " ab #e  # encoding: utf-8
-" ab attr_r attr_reader
-" ab attr_w attr_writer
-" ab attr_a attr_accessor
+
+" -+- lightline:
+
+Plug 'itchyny/lightline.vim'
+
+let g:lightline = {
+    \ 'colorscheme': 'emerald',
+    \ 'component': {
+    \   'readonly': '%{&readonly?"RO":""}',
+    \   'modified': '%{&modified?"+":""}',
+    \ },
+    \ 'component_function': {
+    \   'cwd': 'CwdFunc',
+    \   'fsz': 'FileSize',
+    \ },
+    \ 'active': {
+    \   'left':  [ ['mode', 'paste'], ['readonly'], ['cwd'] ],
+    \   'right': [ ['percent'], ['fileformat'], ['fileencoding'], ['fsz'], ['filetype'], ['filename'], ['modified'] ]
+    \ },
+    \ 'inactive': {
+    \   'left':  [ ['mode', 'paste'], ['readonly'], ['cwd'] ],
+    \   'right': [ ['percent'], ['fileformat'], ['fileencoding'], ['fsz'], ['filetype'], ['filename'], ['modified'] ]
+    \ },
+    \ 'separator':    { 'left': '',  'right': ''  },
+    \ 'subseparator': { 'left': '|', 'right': '|' },
+    \ }
+
+function! CwdFunc()
+    let cwd = substitute(getcwd(), expand($HOME), '~', '')
+    return cwd
+endfunction
+
+function! FileSize()
+    let bytes = getfsize(expand("%:p"))
+    if bytes <= 0
+        return ""
+    endif
+    if bytes < 1024
+        return bytes
+    else
+        return (bytes / 1024) . "K"
+    endif
+endfunction
 
 " -+- Airline:
 
-Plug 'bling/vim-airline'
-let g:airline_theme                        = 'forsterite'
-let g:airline_powerline_fonts              = 1
-let g:airline_left_sep                     = '⮀'
-let g:airline_left_alt_sep                 = '⮁'
-let g:airline_right_sep                    = '⮂'
-let g:airline_right_alt_sep                = '⮃'
-let g:airline_branch_prefix                = '⭠'
-let g:airline_readonly_symbol              = '⭤'
-let g:airline_linecolumn_prefix            = '⭡'
-let g:airline_exclude_preview              = 1
-let g:airline#extensions#whitespace#checks = [ 'indent' ]
-let g:airline_mode_map                     = { '__' : '-', 'n'  : 'N', 'i'  : 'I', 'R'  : 'R', 'c'  : 'C', 'v'  : 'V', 'V'  : 'V', '' : 'V', 's'  : 'S', 'S'  : 'S', '' : 'S' }
+" Plug 'bling/vim-airline'
+
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
+
+" let g:airline_theme                         = 'emerald'
+" let g:airline_powerline_fonts               = 0
+" let g:airline_left_sep                      = '⮀'
+" let g:airline_left_alt_sep                  = '⮁'
+" let g:airline_right_sep                     = '⮂'
+" let g:airline_right_alt_sep                 = '⮃'
+" let g:airline_symbols.branch                = '⭠'
+" let g:airline_symbols.readonly              = '⭤'
+" let g:airline_symbols.linenr                = '⭡'
+" let g:airline_exclude_preview               = 1
+" let g:airline#extensions#whitespace#enabled = 0
+" let g:airline#extensions#whitespace#checks  = [ 'indent' ]
+" let g:airline_mode_map                      = { '__':'-', 'n':'N', 'i':'I', 'R':'R', 'c':'C', 'v':'V', 'V':'V', '':'V', 's':'S', 'S':'S', '':'S' }
+" let g:airline_section_z = '%p%%'
 
 " -+- ag.vim/the_silver_searcher:
 
@@ -621,7 +736,6 @@ Plug 'rking/ag.vim'
 
 " -+- Syntastic:
 
-" Plug 'scrooloose/syntastic', { 'for': ['ruby','html','css', 'scss', 'javascript', 'haml'] }
 Plug 'scrooloose/syntastic', { 'for': ['ruby','css', 'scss', 'javascript', 'haml'] }
 let g:syntastic_auto_jump               = 1
 let g:syntastic_error_symbol            = '✖'
@@ -643,22 +757,6 @@ nmap w :ToggleWhitespace<CR>
 nmap <Leader>dw :StripWhitespace<CR>
 " highlight ExtraWhitespace ctermbg=
 
-" -+- QFix:
-
-" command -bang -nargs=? QFix call QFixToggle(<bang>0)
-" function! QFixToggle(forced)
-"   if exists("g:qfix_win") && a:forced == 0
-"       cclose
-"   else
-"       copen
-"   endif
-" endfunction
-" augroup QFixToggle
-" autocmd!
-" autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
-" autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
-" augroup END
-
 " -+- Autopaste:
 
 let &t_SI .= "\<Esc>[?2004h"
@@ -672,6 +770,7 @@ endfunction
 
 " -+- Startify:
 
+Plug 'mhinz/vim-startify'
 let g:startify_list_order    = ['sessions', 'bookmarks', 'files']
 let g:startify_bookmarks     = ['~/.vimrc', '~/.gvimrc', '~/.bashrc', '~/.zshrc']
 let g:startify_custom_header = [
@@ -710,6 +809,10 @@ let g:vcoolor_lowercase = 1
 nmap <F7> :VCoolor<CR>
 imap <F7> <Plug>vCoolorI
 
+" -+- Cmd2:
+
+Plug 'gelguy/Cmd2.vim'
+
 " -+- Restore last cursor position & foldings:
 
 " autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -726,31 +829,12 @@ noremap <leader>W :w !sudo tee %<CR>
 " imap VVVV ↓
 " imap aaaa λ
 
-" -+- Showing cross cursor:
+" -+- Cross cursor finder:
 
 " hi CursorColumn term=NONE cterm=NONE ctermbg=240
 " hi CursorLine term=NONE cterm=NONE ctermbg=240
 " imap <F8><F9> <ESC>:set cuc! cul!<CR><INSERT><RIGHT>
 " nmap <F8><F9> <ESC>:set cuc! cul!<CR>
-
-" -+- Save file on insert mode exit:
-
-" autocmd InsertLeave * write
-
-" -+-.vimrc auto source:
-
-" augroup vimrc
-"   au!
-"   au BufWritePost .vimrc source %
-" augroup END
-
-" -+- Auto-fold license strings:
-
-" function! FoldLicense()
-"     silent! 1,/Begining of license/;/End of license/fold
-"     " silent! 1,25fold
-" endfunction
-" autocmd FileType * call FoldLicense()
 
 " -+- Improving the text displayed in a fold (http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold):
 
@@ -781,6 +865,7 @@ if has('gui_running')
     let g:airline_theme = 'gotham'
 endif
 
+
 call plug#end()
 
 " -+- Restore last cursor position & foldings:
@@ -796,4 +881,13 @@ call plug#end()
 "     \|      silent loadview
 "     \|  endif
 " augroup END
+
+map <F9> :colo emerald<CR>
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" highlight WordUnder ctermbg=130 ctermfg=254
+" autocmd CursorMoved * exe printf('match WordUnder /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
